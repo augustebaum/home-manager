@@ -11,7 +11,8 @@ let
       freeformType = jsonFormat.type;
       options = {
         email = mkOption {
-          type = types.str;
+          type = with types; nullOr str;
+          default = null;
           example = "name@example.com";
           description = "The email address for your bitwarden account.";
         };
